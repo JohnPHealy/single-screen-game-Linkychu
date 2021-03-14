@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class Slider : MonoBehaviour
 {
-    public Color colour;
+    public Color32 colour;
     public GameObject PlayerImage;
     public GameObject PlayerSkin;
 
@@ -18,14 +18,15 @@ public class Slider : MonoBehaviour
 
      void Start()
     {
-        red = 255f;
-        blue = 255f;
-        green = 255f;
+        red = 1f;
+        blue = 1f;
+        green = 1f;
     }
 
     public void RED(float newRed)
     {
         red = newRed;
+       
     }
 
     public void BLUE(float newBlue)

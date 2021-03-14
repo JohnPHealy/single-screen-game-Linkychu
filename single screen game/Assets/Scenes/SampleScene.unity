@@ -418,7 +418,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 137eb9f02c23fb14e98336a7db2c6ad0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colour: {r: 1, g: 1, b: 1, a: 0}
+  colour:
+    serializedVersion: 2
+    rgba: 0
   PlayerImage: {fileID: 372375682}
   PlayerSkin: {fileID: 2094535721}
 --- !u!222 &31651268
@@ -588,9 +590,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 896607082}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 255
+  m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 255
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -998,9 +1000,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1381561971}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 255
+  m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 255
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -1459,9 +1461,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1540890409}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 255
+  m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 255
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
