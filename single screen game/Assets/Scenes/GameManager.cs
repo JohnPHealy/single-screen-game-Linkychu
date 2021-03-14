@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
         startPos = player.transform.position;
         score = 0;
         UpdateUI();
+        GameStart();
     }
 
     public void RespawnPlayer ()
@@ -44,4 +45,15 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 0;
     }
+
+    public void playerconfig()
+    {
+
+    }
+
+    public void Unpause()
+    {
+        Time.timeScale = 1;
+    }
+
 }
