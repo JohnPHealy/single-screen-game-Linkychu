@@ -5,8 +5,6 @@ using UnityEngine;
 public class powerups : MonoBehaviour
 {
     private GameObject[] speed;
-    private GameObject[] shield;
-    private GameObject[] jumpboost;
     private PlayerMovement movescript;
     private float seconds;
     private bool obtained;
@@ -15,8 +13,7 @@ public class powerups : MonoBehaviour
     {
         movescript = GameObject.Find("Player").GetComponent<PlayerMovement>();
         speed = GameObject.FindGameObjectsWithTag("SpeedPowerup");
-        jumpboost = GameObject.FindGameObjectsWithTag("JumpPowerup");
-        shield = GameObject.FindGameObjectsWithTag("Shield");
+        seconds = 0;
     }
 
      void Update()
@@ -52,6 +49,7 @@ public class powerups : MonoBehaviour
             movescript.moveSpeed = 5;
             movescript.maxSpeed = 10;
             Destroy(gameObject);
+            seconds = 0;
         }
     }
 }
