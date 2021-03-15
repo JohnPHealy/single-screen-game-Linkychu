@@ -42,8 +42,8 @@ public class Slider : MonoBehaviour
 
     void Update()
     {
-        PlayerImage.GetComponent<Image>().color = new Color(red, blue, green);
-        PlayerSkin.GetComponent<SpriteRenderer>().color = new Color(red, blue, green);
+        PlayerImage.GetComponent<Image>().color = new Color(red, green, blue);
+        PlayerSkin.GetComponent<SpriteRenderer>().color = new Color(red, green, blue);
 
     }
 }
