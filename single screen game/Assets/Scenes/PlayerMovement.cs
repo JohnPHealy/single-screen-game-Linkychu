@@ -38,6 +38,7 @@ public class PlayerMovement : MonoBehaviour
         if (Mathf.Abs(myRB.velocity.x) < maxSpeed)
         {
             myRB.AddForce(moveAxis * moveSpeed, ForceMode2D.Force);
+            
         }
 
         if (groundCheck.IsTouchingLayers(groundLayers))

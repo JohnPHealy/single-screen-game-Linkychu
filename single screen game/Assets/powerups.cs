@@ -14,7 +14,7 @@ public class powerups : MonoBehaviour
     {
         movescript = GameObject.Find("Player").GetComponent<PlayerMovement>();
         speed = GameObject.FindGameObjectsWithTag("SpeedPowerup");
-        uiscript = GameObject.Find("UI").GetComponent<COOLUI>();
+        uiscript = GameObject.Find("COOLUI").GetComponent<COOLUI>();
         seconds = 0;
         uiscript.speed.SetActive(false);
         uiscript.none.SetActive(true);

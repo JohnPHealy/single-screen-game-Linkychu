@@ -3,11 +3,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private GameObject player;
     private Vector3 startPos;
+    int failed;
+    public Slider slider;
+    public GameObject menu;
+    public GameObject menu2;
+    public GameObject menu3;
+    private static GameManager instance;
+    public static GameManager Instance { get { return instance; } }
+
+    
     
 
     private void Start()
@@ -18,7 +28,8 @@ public class GameManager : MonoBehaviour
 
     public void RespawnPlayer ()
     {
-        player.transform.position = startPos;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
     }
  
 

@@ -6,14 +6,15 @@ TagManager:
   tags:
   - SpeedPowerup
   - JumpPowerup
+  - PatrolPoint
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Ground
+  - Player
   - Water
   - UI
-  - 
+  - Ground
   - 
   - 
   - 

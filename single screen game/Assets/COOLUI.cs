@@ -7,7 +7,6 @@ using UnityEngine.Events;
 public class COOLUI : MonoBehaviour
 {
     [SerializeField] private UnityEvent<string> addScore;
-    private Vector3 startPos;
     private int score;
     public GameObject none;
     public GameObject jump;
@@ -18,7 +17,6 @@ public class COOLUI : MonoBehaviour
     void Start()
     {
         score = 0;
-        UpdateUI();
         none.SetActive(true);
         jump.SetActive(false);
         shield.SetActive(false);
@@ -29,11 +27,7 @@ public class COOLUI : MonoBehaviour
     public void Addscore(int scoreAmt)
     {
         score += scoreAmt;
-    }
-
-    private void UpdateUI()
-    {
-        addScore.Invoke(score.ToString());
+        addScore.Invoke(scoreAmt.ToString());
     }
 
 }
