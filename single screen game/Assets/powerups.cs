@@ -54,7 +54,7 @@ public class powerups : MonoBehaviour
         uiscript.jump.SetActive(false);
         uiscript.shield.SetActive(false);
 
-        if (seconds > 600)
+        if (seconds > 100)
         {
             obtained = false;
             movescript.moveSpeed = 5;

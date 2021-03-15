@@ -17,6 +17,7 @@ public class COOLUI : MonoBehaviour
     void Start()
     {
         score = 0;
+        addScore.Invoke(score.ToString());
         none.SetActive(true);
         jump.SetActive(false);
         shield.SetActive(false);
@@ -27,7 +28,7 @@ public class COOLUI : MonoBehaviour
     public void Addscore(int scoreAmt)
     {
         score += scoreAmt;
-        addScore.Invoke(scoreAmt.ToString());
+        addScore.Invoke(score.ToString());
     }
 
 }
