@@ -26,7 +26,6 @@ public class powerups1 : MonoBehaviour
     {
         if (obtained1 == true)
         {
-            seconds1 += 0.5f;
             dead1();
         }
     }
@@ -37,7 +36,7 @@ public class powerups1 : MonoBehaviour
     {
         if (jump.Length > 0 && other.gameObject.tag == "Player")
         {
-
+            StartCoroutine(powerupend1());
             movescript.jumpForce += 10f;
             obtained1 = true;
             
@@ -52,10 +51,12 @@ public class powerups1 : MonoBehaviour
         uiscript.none.SetActive(false);
         uiscript.jump.SetActive(true);
         uiscript.shield.SetActive(false);
+    }
 
-        if (seconds1 > 600)
+    IEnumerator powerupend1()
         {
-            obtained1 = false;
+        yield return new WaitForSeconds(7f);
+        obtained1 = false;
             movescript.jumpForce = 5f;
             Destroy(gameObject);
             uiscript.jump.SetActive(false);
@@ -63,4 +64,3 @@ public class powerups1 : MonoBehaviour
 
         }
     }
-}

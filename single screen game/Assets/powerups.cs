@@ -9,7 +9,7 @@ public class powerups : MonoBehaviour
     private COOLUI uiscript;
     private float seconds;
     private bool obtained;
- 
+
     void Start()
     {
         movescript = GameObject.Find("Player").GetComponent<PlayerMovement>();
@@ -22,26 +22,25 @@ public class powerups : MonoBehaviour
         uiscript.shield.SetActive(false);
     }
 
-     void Update()
+    void Update()
     {
         if (obtained == true)
         {
-            seconds += 0.5f;
             dead();
         }
     }
 
-    
+
     // Update is called once per frame
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (speed.Length > 0 && other.gameObject.tag == "Player")
         {
-
+            StartCoroutine(powerupend());
             movescript.moveSpeed += 30f;
             movescript.maxSpeed += 50f;
             obtained = true;
-           
+
         }
     }
 
@@ -53,16 +52,19 @@ public class powerups : MonoBehaviour
         uiscript.none.SetActive(false);
         uiscript.jump.SetActive(false);
         uiscript.shield.SetActive(false);
-
-        if (seconds > 150)
-        {
-            obtained = false;
-            movescript.moveSpeed = 5;
-            movescript.maxSpeed = 10;
-            Destroy(gameObject);
-            seconds = 0;
-            uiscript.speed.SetActive(false);
-            uiscript.none.SetActive(true);
-        }
     }
-}
+
+    IEnumerator powerupend()
+    {
+        yield return new WaitForSeconds(1.5f);
+        obtained = false;
+        movescript.moveSpeed = 5;
+        movescript.maxSpeed = 10;
+        Destroy(gameObject);
+        seconds = 0;
+        uiscript.speed.SetActive(false);
+        uiscript.none.SetActive(true);
+    }
+} 
+   
+
