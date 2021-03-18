@@ -26,7 +26,7 @@ public class Cameratrigger : MonoBehaviour
 
     IEnumerator finish()
     {
-        yield return new WaitForSeconds(19f);
+        yield return new WaitForSeconds(19.5f);
         this.gameObject.GetComponent<BoxCollider2D>().enabled = false;
         Player.SetActive(true);
         Destroy(camera2);
