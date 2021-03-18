@@ -4,6 +4,7 @@ ScriptsOnlyBuild:
     - AIPatrol
     - COOLUI
     - Camerafollow
+    - Cameratrigger
     - Destroy
     - GameManager
     - PlayerCombat
@@ -55,8 +56,10 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -68,6 +71,7 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Image
+    - UnityEngine.UI.RawImage
     - UnityEngine.UI.Slider
   sceneClasses:
     Assets/Scenes/SampleScene.unity:
@@ -91,70 +95,84 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 61
       Script: {instanceID: 0}
+    - Class: 74
+      Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
     - Class: 82
       Script: {instanceID: 0}
     - Class: 83
       Script: {instanceID: 0}
+    - Class: 84
+      Script: {instanceID: 0}
+    - Class: 91
+      Script: {instanceID: 0}
+    - Class: 95
+      Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
+    - Class: 108
+      Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 632}
+      Script: {instanceID: 622}
     - Class: 114
-      Script: {instanceID: 1532}
+      Script: {instanceID: 7388}
     - Class: 114
-      Script: {instanceID: 1536}
+      Script: {instanceID: 7392}
     - Class: 114
-      Script: {instanceID: 1756}
+      Script: {instanceID: 7606}
     - Class: 114
-      Script: {instanceID: 1878}
+      Script: {instanceID: 7726}
     - Class: 114
-      Script: {instanceID: 2058}
+      Script: {instanceID: 7902}
     - Class: 114
-      Script: {instanceID: 2242}
+      Script: {instanceID: 8058}
     - Class: 114
-      Script: {instanceID: 2518}
+      Script: {instanceID: 8086}
     - Class: 114
-      Script: {instanceID: 2700}
+      Script: {instanceID: 8264}
     - Class: 114
-      Script: {instanceID: 2898}
+      Script: {instanceID: 8358}
     - Class: 114
-      Script: {instanceID: 2946}
+      Script: {instanceID: 8540}
     - Class: 114
-      Script: {instanceID: 3096}
+      Script: {instanceID: 8734}
     - Class: 114
-      Script: {instanceID: 3200}
+      Script: {instanceID: 8780}
     - Class: 114
-      Script: {instanceID: 3490}
+      Script: {instanceID: 8824}
     - Class: 114
-      Script: {instanceID: 3860}
+      Script: {instanceID: 8932}
     - Class: 114
-      Script: {instanceID: 4366}
+      Script: {instanceID: 9036}
     - Class: 114
-      Script: {instanceID: 4754}
+      Script: {instanceID: 9308}
     - Class: 114
-      Script: {instanceID: 4802}
+      Script: {instanceID: 9328}
     - Class: 114
-      Script: {instanceID: 4896}
+      Script: {instanceID: 9582}
     - Class: 114
-      Script: {instanceID: 4940}
+      Script: {instanceID: 9698}
     - Class: 114
-      Script: {instanceID: 4954}
+      Script: {instanceID: 10204}
     - Class: 114
-      Script: {instanceID: 5350}
+      Script: {instanceID: 10580}
     - Class: 114
-      Script: {instanceID: 5450}
+      Script: {instanceID: 10602}
     - Class: 114
-      Script: {instanceID: 44210}
+      Script: {instanceID: 10696}
     - Class: 114
-      Script: {instanceID: 61372}
+      Script: {instanceID: 10740}
     - Class: 114
-      Script: {instanceID: 81746}
+      Script: {instanceID: 10754}
     - Class: 114
-      Script: {instanceID: 236252}
+      Script: {instanceID: 11144}
     - Class: 114
-      Script: {instanceID: 297616}
+      Script: {instanceID: 11242}
+    - Class: 114
+      Script: {instanceID: 11410}
+    - Class: 114
+      Script: {instanceID: 11498}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -172,6 +190,8 @@ ScriptsOnlyBuild:
     - Class: 223
       Script: {instanceID: 0}
     - Class: 224
+      Script: {instanceID: 0}
+    - Class: 249
       Script: {instanceID: 0}
     - Class: 251
       Script: {instanceID: 0}
@@ -386,6 +406,12 @@ ScriptsOnlyBuild:
     className: GroupTrack
   - hash:
       serializedVersion: 2
+      Hash: f7772c85bd866f3c00fa217f7d0ab04f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Cameratrigger
+  - hash:
+      serializedVersion: 2
       Hash: d791aa6007fa3640be1164ea75bb087d
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -566,10 +592,22 @@ ScriptsOnlyBuild:
     className: CinemachinePipeline
   - hash:
       serializedVersion: 2
+      Hash: e76efbefe9672ab1f18eb4126f88270a
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PlayerCombat
+  - hash:
+      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Cinemachine.dll
     namespaceName: Cinemachine
     className: CinemachineHardLookAt
+  - hash:
+      serializedVersion: 2
+      Hash: 65fcdb0b5751114e8236fce87e681d8e
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ParallaxScript
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -704,6 +742,12 @@ ScriptsOnlyBuild:
     className: CinemachineMixingCamera
   - hash:
       serializedVersion: 2
+      Hash: 48a3ea302cc2cdef085053eba1494878
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: AIPatrol
+  - hash:
+      serializedVersion: 2
       Hash: a66794b62dbf044668a5f102bb7908c2
     assemblyName: Cinemachine.dll
     namespaceName: Cinemachine
@@ -780,6 +824,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: ContentSizeFitter
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Destroy
   - hash:
       serializedVersion: 2
       Hash: 6ff1c52123c50b3d73f35cd0e2e65dfd
@@ -1328,6 +1378,18 @@ ScriptsOnlyBuild:
     className: CinemachineBasicMultiChannelPerlin
   - hash:
       serializedVersion: 2
+      Hash: 7c8ad37c1e2b8117d83ef7fa47add4b5
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: coin
+  - hash:
+      serializedVersion: 2
+      Hash: bc25085af7c23e49bbff3f64e4961562
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Camerafollow
+  - hash:
+      serializedVersion: 2
       Hash: b6514f552bd2ee9e736a5678aa7f7de3
     assemblyName: Assembly-CSharp.dll
     namespaceName: TMPro.Examples
@@ -1404,36 +1466,6 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: TMPro.Examples
     className: TMP_TextEventCheck
-  - hash:
-      serializedVersion: 2
-      Hash: e76efbefe9672ab1f18eb4126f88270a
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: PlayerCombat
-  - hash:
-      serializedVersion: 2
-      Hash: 48a3ea302cc2cdef085053eba1494878
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: AIPatrol
-  - hash:
-      serializedVersion: 2
-      Hash: 7c8ad37c1e2b8117d83ef7fa47add4b5
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: coin
-  - hash:
-      serializedVersion: 2
-      Hash: bc25085af7c23e49bbff3f64e4961562
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: Camerafollow
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: Destroy
   platform: 5
   scenePathNames:
   - Assets/Scenes/SampleScene.unity

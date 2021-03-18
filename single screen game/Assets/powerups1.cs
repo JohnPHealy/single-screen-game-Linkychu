@@ -16,16 +16,25 @@ public class powerups1 : MonoBehaviour
         jump = GameObject.FindGameObjectsWithTag("JumpPowerup");
         uiscript = GameObject.Find("COOLUI").GetComponent<COOLUI>();
         seconds1 = 0;
+
         uiscript.speed.SetActive(false);
         uiscript.none.SetActive(true);
         uiscript.jump.SetActive(false);
         uiscript.shield.SetActive(false);
     }
 
+    void reappear()
+    {
+        gameObject.SetActive(true);
+        gameObject.GetComponent<SpriteRenderer>().enabled = true;
+        gameObject.GetComponent<CircleCollider2D>().enabled = true;
+        seconds1 = 0;
+    }
      void Update()
     {
         if (obtained1 == true)
         {
+            seconds1++;
             dead1();
         }
     }
@@ -45,12 +54,13 @@ public class powerups1 : MonoBehaviour
 
     void dead1()
     {
-        gameObject.GetComponent<Renderer>().enabled = false;
+        gameObject.GetComponent<SpriteRenderer>().enabled = false;
         gameObject.GetComponent<Collider2D>().enabled = false;
         uiscript.speed.SetActive(false);
         uiscript.none.SetActive(false);
         uiscript.jump.SetActive(true);
         uiscript.shield.SetActive(false);
+
     }
 
     IEnumerator powerupend1()
@@ -58,9 +68,12 @@ public class powerups1 : MonoBehaviour
         yield return new WaitForSeconds(7f);
         obtained1 = false;
             movescript.jumpForce = 5f;
-            Destroy(gameObject);
-            uiscript.jump.SetActive(false);
-            uiscript.none.SetActive(true);
-
+        uiscript.jump.SetActive(false);
+        uiscript.none.SetActive(true);
+        gameObject.SetActive(false);
+        if (seconds1 > 1000)
+        {
+            reappear();
         }
     }
+     }

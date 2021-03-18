@@ -22,10 +22,18 @@ public class powerups : MonoBehaviour
         uiscript.shield.SetActive(false);
     }
 
+    void reappear()
+    {
+        seconds = 0;
+        gameObject.SetActive(true);
+        gameObject.GetComponent<SpriteRenderer>().enabled = true;
+        gameObject.GetComponent<CircleCollider2D>().enabled = true;
+    }
     void Update()
     {
         if (obtained == true)
         {
+            seconds++;
             dead();
         }
     }
@@ -46,7 +54,7 @@ public class powerups : MonoBehaviour
 
     void dead()
     {
-        gameObject.GetComponent<Renderer>().enabled = false;
+        gameObject.GetComponent<SpriteRenderer>().enabled = false;
         gameObject.GetComponent<Collider2D>().enabled = false;
         uiscript.speed.SetActive(true);
         uiscript.none.SetActive(false);
@@ -60,11 +68,17 @@ public class powerups : MonoBehaviour
         obtained = false;
         movescript.moveSpeed = 5;
         movescript.maxSpeed = 10;
-        Destroy(gameObject);
-        seconds = 0;
         uiscript.speed.SetActive(false);
         uiscript.none.SetActive(true);
+        gameObject.SetActive(false);
+        
+        if (seconds > 200)
+        {
+            reappear();
+        }
     }
 } 
+
+
    
 
