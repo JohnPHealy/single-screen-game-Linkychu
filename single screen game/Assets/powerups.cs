@@ -64,7 +64,7 @@ public class powerups : MonoBehaviour
 
     IEnumerator powerupend()
     {
-        yield return new WaitForSeconds(2.5f);
+        yield return new WaitForSeconds(1.5f);
         obtained = false;
         movescript.moveSpeed = 5;
         movescript.maxSpeed = 10;
