@@ -71,7 +71,7 @@ public class powerups1 : MonoBehaviour
         uiscript.jump.SetActive(false);
         uiscript.none.SetActive(true);
         gameObject.SetActive(false);
-        if (seconds1 > 1000)
+        if (seconds1 > 10)
         {
             reappear();
         }

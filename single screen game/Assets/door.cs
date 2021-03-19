@@ -12,7 +12,7 @@ public class door : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Player" && coolui.score >=250)
+        if (other.gameObject.tag == "Player" && coolui.score >=280)
         {
             SceneManager.LoadScene(sceneBuildIndex: 1);
         }
