@@ -72,7 +72,7 @@ public class powerups : MonoBehaviour
         uiscript.none.SetActive(true);
         gameObject.SetActive(false);
         
-        if (seconds > 200)
+        if (seconds > 10)
         {
             reappear();
         }
