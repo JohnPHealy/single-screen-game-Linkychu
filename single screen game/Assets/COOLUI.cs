@@ -6,12 +6,13 @@ using UnityEngine.Events;
 
 public class COOLUI : MonoBehaviour
 {
-    [SerializeField] private UnityEvent<string> addScore;
-    private int score;
+    public UnityEvent<string> addScore;
+    public int score;
     public GameObject none;
     public GameObject jump;
     public GameObject shield;
     public GameObject speed;
+
 
     // Start is called before the first frame update
     void Start()

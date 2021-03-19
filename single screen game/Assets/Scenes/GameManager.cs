@@ -14,21 +14,21 @@ public class GameManager : MonoBehaviour
     public GameObject menu;
     public GameObject menu2;
     public GameObject menu3;
-    private static GameManager instance;
-    public static GameManager Instance { get { return instance; } }
+    public COOLUI coolui;
 
     
     
 
     private void Start()
     {
+
         startPos = player.transform.position;
         GameStart();
     }
 
-    public void RespawnPlayer ()
+    public void Restart ()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene(sceneBuildIndex: 0);
 
     }
  
@@ -53,4 +53,13 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1;
     }
 
+    public void RespawnPlayer()
+    {
+        player.transform.position = new Vector3 (-3.9000001f, -3.63000011f, 1f);
+    }
+
+    public void Exit()
+    {
+        Application.Quit();
+    }
 }
