@@ -1572,4 +1572,5 @@ ScriptsOnlyBuild:
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
   - Assets/Scenes/YOU WIN.unity
-  playerPath: C:/Users/olayi/Desktop/single screen game_Data/single screen game.exe
+  playerPath: C:/Users/olayi/Desktop/single screen game_Data/single screen game_Data/single
+    screen game.exe
